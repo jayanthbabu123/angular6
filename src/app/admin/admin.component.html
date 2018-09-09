@@ -1,0 +1,152 @@
+<div class="heading-box text-center" *ngIf='showButton;else detailsForm'>
+  <button class="btn btn-primary" (click)="displayForm()">Admin</button>
+</div>
+
+<ng-template #detailsForm>
+  <div class="container-fluid admin-heading">
+    <div class="row">
+      <div class="col-sm-10">
+        <h3 class="title">WELLS FARGO</h3>
+      </div>
+  
+      <div class="col-sm-2 text-right">
+        <img class="default-user" height="60" width="60" src="../../assets/default_user.png" />
+        <fa name="bars" class="toggle-bars"></fa>
+      </div>
+  
+    </div>
+  </div>
+  <div class="container-fluid admin-data-form">
+    <div class="row sub-menu">
+      <div class="col-md-12">
+        <h5>
+          <a class="activate-admin"> Activate | Exit</a>
+        </h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Activate Branches</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 filter-section">
+        <div class="common-section">
+          Select Group
+          <fa name="arrow-down" class="pull-right"></fa>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="common-section">
+          Select Division
+          <fa name="arrow-down" class="pull-right"></fa>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="common-section">
+          Select Region
+          <fa name="arrow-down" class="pull-right"></fa>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="common-section">
+          Select Market
+          <fa name="arrow-down" class="pull-right"></fa>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="common-section">
+          Search by AU
+          <fa name="arrow-down" class="pull-right"></fa>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1 activation-date">Activation Date:</div>
+      <div class="col-sm-2 padding-none">
+        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [bsValue]="bsValue">
+      </div>
+      <div class="col-sm-1 text-right">Features:</div>
+      <div class="col-sm-3 padding-none">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            One Interface
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2">
+            Manager View
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-4 text-right">
+        <button class="btn btn-primary"> Search</button>
+      </div>
+  
+    </div>
+    <div class="row">
+      <table class="table table-striped table-bordered">
+        <thead class="table-heading">
+          <tr>
+            <th scope="col">Select</th>
+            <th scope="col">Branch AU</th>
+            <th scope="col">Feature Name</th>
+            <th scope="col">Activation Date</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">
+              <input class="form-check-input" type="checkbox" value="">
+            </td>
+            <td>0000001</td>
+            <td>One Interface</td>
+            <td>01/01/2016</td>
+            <td class="text-center"> <fa name="pencil"></fa></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <input class="form-check-input" type="checkbox" value="">
+            </td>
+            <td>0000002</td>
+            <td>One Interface</td>
+            <td>01/01/2016</td>
+            <td class="text-center"> <fa name="pencil"></fa></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <input class="form-check-input" type="checkbox" value="">
+            </td>
+            <td>0000003</td>
+            <td>One Interface</td>
+            <td>01/01/2016</td>
+            <td class="text-center"> <fa name="pencil"></fa></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <input class="form-check-input" type="checkbox" value="">
+            </td>
+            <td>0000001</td>
+            <td>One Interface</td>
+            <td>01/01/2016</td>
+            <td class="text-center"> <fa name="pencil"></fa></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <input class="form-check-input" type="checkbox" value="">
+            </td>
+            <td>0000001</td>
+            <td>Manager View</td>
+            <td>01/01/2016</td>
+            <td class="text-center"> <fa name="pencil"></fa></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+</ng-template>
+
