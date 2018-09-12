@@ -57,3 +57,18 @@
 .table th, .table td{
     padding: 0.3rem;
 }
+.manage-feature{
+    padding-right: 10px;
+    font-weight: bold
+}
+
+.manager-dropdown{
+    width: 172px;
+    height: 37px;
+    margin-right: 10px;
+    margin-top: 6px;
+    background: #007bff;
+    border-radius: 5px;
+    color: white;
+    padding: 0 6px;
+}
