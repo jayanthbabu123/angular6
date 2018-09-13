@@ -8,6 +8,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AdminComponent } from "./admin/admin.component";
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
+import {AdminService} from './admin/admin.service'
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent, AdminComponent, HomeComponent],
@@ -17,7 +18,7 @@ import { HomeComponent } from './home/home.component';
     AngularFontAwesomeModule,
     BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
