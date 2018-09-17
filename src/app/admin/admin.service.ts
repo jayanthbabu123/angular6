@@ -7,6 +7,16 @@ export class AdminService{
     constructor(){
 
     }
+    selectGroup:any = [
+      {type: 'group1'},
+      {type: 'group2'},
+      {type: 'group3'},
+      {type: 'group4'},
+      {type: 'group5'},
+      {type: 'group6'},
+      {type: 'group7'}
+
+    ]
     formData: any = {
         'oneInterface': [
           { releaseIdentifier: 1801, property: 'ID', value: 'OI', edit: '', save: '' },

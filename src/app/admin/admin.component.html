@@ -32,40 +32,29 @@
     </div>
     <div class="row">
       <div class="col-sm-2 filter-section">
-        <div class="common-section">
+          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="group" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <!-- <div class="common-section">
           Select Group
           <fa name="arrow-down" class="pull-right"></fa>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-2">
-        <div class="common-section">
-          Select Division
-          <fa name="arrow-down" class="pull-right"></fa>
-        </div>
+          <ngx-select-dropdown placeholder='test' (change)="selectionChanged($event)" [(value)]="dividion" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-        <div class="common-section">
-          Select Region
-          <fa name="arrow-down" class="pull-right"></fa>
-        </div>
+          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="region" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-        <div class="common-section">
-          Select Market
-          <fa name="arrow-down" class="pull-right"></fa>
-        </div>
+          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="market" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-        <div class="common-section">
-          Search by AU
-          <fa name="arrow-down" class="pull-right"></fa>
-        </div>
+          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="dataModel" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-1 activation-date">Activation Date:</div>
       <div class="col-sm-2 padding-none">
-        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [bsValue]="bsValue">
+        <!-- <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [bsValue]="bsValue"> -->
       </div>
       <div class="col-sm-1 text-right">Features:</div>
       <div class="col-sm-3 padding-none">

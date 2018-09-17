@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { SelectDropDownModule } from 'ngx-select-dropdown'
 
 import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -16,7 +16,7 @@ import {AdminService} from './admin/admin.service'
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    BsDatepickerModule.forRoot()
+    SelectDropDownModule
   ],
   providers: [AdminService],
   bootstrap: [AppComponent]

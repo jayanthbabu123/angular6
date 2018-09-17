@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from './admin.service';
+import { AdminService } from './admin.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -10,20 +10,27 @@ export class AdminComponent implements OnInit {
   managerView: Boolean = false;
   adminView: Boolean = false;
   selectedType: string = '';
-  bsValue = new Date();
   selectedData;
-  formData:any;
-  
-  
+  formData: any;
+  group: string = 'select group';
+  division: string = 'select division';
+  region: string = 'select region';
+  market: string = 'select market';
+  config = {
+    displayKey: "type"
+  };
+  dropdownOptions: any;
 
-  constructor(private AdminService : AdminService) {
-    
-   }
+
+
+  constructor(private AdminService: AdminService) {
+
+  }
   displayForm(value: string) {
     this.showButton = false;
     value === 'admin' ? this.adminView = true : this.managerView = true;
   }
-  exit(){
+  exit() {
     this.showButton = true;
     this.adminView = false;
     this.managerView = false;
@@ -32,12 +39,13 @@ export class AdminComponent implements OnInit {
     this.selectedType = event.target.value;
     this.selectedData = this.formData[this.selectedType]
   }
-  selectedValue(){
+  selectedValue() {
     this.selectedData = this.formData[this.selectedType]
   }
   ngOnInit() {
-    this.formData =this.AdminService.getData();
-    this.selectedData =this.formData['oneInterface'];
+    this.formData = this.AdminService.getData();
+    this.dropdownOptions = this.AdminService.selectGroup;
+    this.selectedData = this.formData['oneInterface'];
   }
 
 }
