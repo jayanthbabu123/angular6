@@ -32,23 +32,23 @@
     </div>
     <div class="row">
       <div class="col-sm-2 filter-section">
-          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="group" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="group" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
         <!-- <div class="common-section">
           Select Group
           <fa name="arrow-down" class="pull-right"></fa>
         </div> -->
       </div>
       <div class="col-sm-2">
-          <ngx-select-dropdown placeholder='test' (change)="selectionChanged($event)" [(value)]="dividion" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <ngx-select-dropdown placeholder='test' (change)="selectionChanged($event)" [(value)]="division" [config]="config" [options]="selectAdminDropdown"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="region" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="region" [config]="config" [options]="selectAdminDropdown"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="market" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="market" [config]="config" [options]="selectAdminDropdown"></ngx-select-dropdown>
       </div>
       <div class="col-sm-2">
-          <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="dataModel" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [(value)]="dataModel" [config]="config" [options]="selectAdminDropdown"></ngx-select-dropdown>
       </div>
     </div>
     <div class="row">
@@ -168,9 +168,8 @@
     </div>
     <div class="col">
       <label class="manage-feature">Select Feature Name:</label>
-      <select class="manager-dropdown" (change)="selectChangeHandler($event)">
-        <option value="oneInterface">One Interface</option>
-        <option value="managerView">Manager View</option>
+      <select class="manager-dropdown" [(ngModel)]="appName" (ngModelChange)="selectChangeHandler(appName)">
+        <option *ngFor="let option of dropdownOptions">{{option.appName}}</option>
       </select>
       <button class="btn btn-primary" (click)='selectedValue()' style="margin-top: -5px">GO</button>
     </div>
@@ -179,36 +178,36 @@
     </div>
   </div>
   <div class="row">
-      <table class="table table-striped table-bordered">
-          <thead class="table-heading">
-            <tr>
-              <th scope="col">releaseIdentifier</th>
-              <th scope="col">app name</th>
-              <th scope="col">color</th>
-              <th scope="col">height</th>
-              <th scope="col">width</th>
-              <th scope="col">is fullscreen</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Save</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of navigationItems">
-              <td>{{data.version}}</td>
-              <td>{{data.appName}}</td>
-              <td>{{data.icon.color}}</td>
-              <td>{{data.icon.height}}</td>
-              <td>{{data.icon.width}}</td>
-              <td>{{data.isFullscreen}}</td>
-              <td>
-                <img height="20" width="20" src="../../assets/edit.png" />
-              </td>
-              <td>
-                <img height="20" width="20" src="../../assets/save.png" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <table class="table table-striped table-bordered">
+      <thead class="table-heading">
+        <tr>
+          <th scope="col">releaseIdentifier</th>
+          <th scope="col">app name</th>
+          <th scope="col">height</th>
+          <th scope="col">width</th>
+          <th scope="col">is fullscreen</th>
+          <th scope="col">color</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of navigationItems.branchConfigs">
+          <td>{{data.appVersion}}</td>
+          <td>{{data.appName}}</td>
+          <td>{{data.properties.iconHeight}}</td>
+          <td>{{data.properties.iconWidth}}</td>
+          <td>{{data.properties.fullScreen}}</td>
+          <td>{{data.properties.iconColor}}</td>
+          <td>
+            <img height="20" width="20" src="../../assets/edit.png" />
+          </td>
+          <td>
+            <img height="20" width="20" src="../../assets/save.png" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <!-- <table class="table table-striped table-bordered">
       <thead class="table-heading">
         <tr>
